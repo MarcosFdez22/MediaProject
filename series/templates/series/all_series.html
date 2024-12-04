@@ -1,0 +1,34 @@
+{% extends "mproject/base.html" %} {% block content %}
+<div class="container mt-3">
+  <div class="card bg-primary text-white">
+    <div class="card-body">
+      <h1>Series</h1>
+    </div>
+  </div>
+  <br />
+  <div class="card bg-warning text-white">
+    <div class="card-body">
+      <h2>series list:</h2>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  {% for serie in series %}
+  {% if serie.id %}
+      <div class="card bg-secondary text-white">
+          <div class="card-body">
+              <h2>
+                  <a href="{% url 'series:detail' serie.id %}">{{ serie.title }}</a>
+              </h2>
+              <h3>{{ serie.description|safe|truncatewords:50 }}</h3><br>
+          </div>
+      </div>
+      <br /><br />
+  {% endif %}
+{% endfor %}
+
+    </div>
+    {% endblock %}
+  </div>
+</div>

@@ -1,0 +1,6 @@
+{% extends "mproject/base.html" %} {% block content %}
+<div class="container mt-3">
+  <h1>{{ movies.title }}</h1>
+  <h2>{{movies.description|safe}}</h2>
+</div>
+{% endblock %}
